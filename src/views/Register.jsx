@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { supabase } from "../services/supabase"
-import { User, Mail, Phone, Lock } from "lucide-react"
+import { User, Mail, Phone, Lock, Icon } from "lucide-react"
 
 export default function Register() {
   const [form, setForm] = useState({
