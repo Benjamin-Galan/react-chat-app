@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { supabase } from "../services/supabase"
 import { User, Mail, Phone, Lock, Icon } from "lucide-react"
 
@@ -147,7 +147,7 @@ export default function Register() {
 }
 
 // Reusable input component
-function InputField({ label, name, type, value, onChange, placeholder }) {
+function InputField({ label, name, type, value, onChange, placeholder, icon }) {
   return (
     <div className="space-y-2">
       <label htmlFor={name} className="block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -155,7 +155,7 @@ function InputField({ label, name, type, value, onChange, placeholder }) {
       </label>
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Icon className="h-5 w-5 text-gray-400" />
+          {icon && React.createElement(icon, { className: "w-5 h-5 text-gray-400" })}
         </div>
         <input
           type={type}
